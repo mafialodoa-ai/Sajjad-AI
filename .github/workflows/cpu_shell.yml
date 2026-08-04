@@ -1,0 +1,14 @@
+name: Termux to GitHub CPU Shell
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  run-cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        
+      - name: Setup SSH Session via tmate
+        uses: mxschmitt/action-tmate@v3
