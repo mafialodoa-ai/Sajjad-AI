@@ -12,3 +12,12 @@ jobs:
         
       - name: Setup SSH Session via tmate
         uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: false
+
+      - name: Keep Session Alive
+        run: |
+          echo "SSH session is active. Waiting..."
+          while true; do
+            sleep 30
+          done
